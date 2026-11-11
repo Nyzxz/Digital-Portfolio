@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
+import { prefersReducedMotion } from './motion';
 
+/** Types and deletes through `words`. With reduced motion it simply returns the first word, static. */
 export function useTypewriter(
   words: readonly string[],
   typeMs = 70,
   deleteMs = 35,
   pauseMs = 1400,
 ) {
+  const reduced = prefersReducedMotion();
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
+    if (reduced) return;
     const word = words[index % words.length];
     let delay = deleting ? deleteMs : typeMs;
     if (!deleting && text === word) delay = pauseMs;
@@ -31,7 +35,7 @@ export function useTypewriter(
     }, delay);
 
     return () => window.clearTimeout(id);
-  }, [text, deleting, index, words, typeMs, deleteMs, pauseMs]);
+  }, [reduced, text, deleting, index, words, typeMs, deleteMs, pauseMs]);
 
-  return text;
+  return reduced ? words[0] : text;
 }

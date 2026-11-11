@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import type { Project } from '../types';
+import Icon from './Icon';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -37,10 +38,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       >
         <button className="modal-close" onClick={onClose} aria-label="Close">✕</button>
         <div className="modal-visual">
-          <span className="project-icon">{project.icon}</span>
+          <span className="project-icon">
+            <Icon name={project.icon} size={72} />
+          </span>
         </div>
         <div className="modal-body">
-          <span className="project-category">{project.category.toUpperCase()}</span>
+          <div className="project-meta">
+            <span className="project-category">{project.category.toUpperCase()}</span>
+            {project.status && <span className="status-chip">{project.status}</span>}
+            {project.year && <span className="year-chip">{project.year}</span>}
+          </div>
           <h3>{project.title}</h3>
           <p>{project.description}</p>
           <div className="project-tech">

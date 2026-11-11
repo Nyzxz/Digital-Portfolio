@@ -1,5 +1,6 @@
 import { categoryLabels, education, profile, skills, softSkills } from '../data/portfolio';
 import type { SkillCategory } from '../types';
+import Icon from '../components/Icon';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
 import SkillBar from '../components/SkillBar';
@@ -19,7 +20,9 @@ export default function About() {
           <div className="avatar">{profile.initials}</div>
           <h2>{profile.name}</h2>
           <p className="profile-role">{profile.shortRole}</p>
-          <p className="profile-location">📍 {profile.location}</p>
+          <p className="profile-location">
+            <Icon name="map-pin" size={16} /> {profile.location}
+          </p>
           <div className="profile-social">
             <a className="social-btn" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
             <a className="social-btn" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -84,7 +87,7 @@ export default function About() {
           {softSkills.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
               <div className="soft-skill-card">
-                <div className="soft-skill-icon">{s.icon}</div>
+                <div className="soft-skill-icon"><Icon name={s.icon} size={38} /></div>
                 <h3>{s.title}</h3>
                 <p>{s.description}</p>
               </div>

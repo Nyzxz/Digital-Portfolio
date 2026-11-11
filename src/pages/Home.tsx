@@ -5,6 +5,8 @@ import { useTypewriter } from '../hooks/useTypewriter';
 import { useTilt } from '../hooks/useTilt';
 import { useInView } from '../hooks/useInView';
 import { useCountUp } from '../hooks/useCountUp';
+import Icon from '../components/Icon';
+import ContactCta from '../components/ContactCta';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
 import ProjectCard from '../components/ProjectCard';
@@ -78,8 +80,15 @@ function StatItem({ label, value, suffix = '' }: Stat) {
   return (
     <div ref={ref} className="stat-item">
       <span className="stat-number">
-        {n.toLocaleString()}
-        {suffix}
+        <span aria-hidden="true">
+          {n.toLocaleString()}
+          {suffix}
+        </span>
+        {/* Screen readers, crawlers and reduced-motion users always get the real final value. */}
+        <span className="sr-only">
+          {value.toLocaleString()}
+          {suffix}
+        </span>
       </span>
       <span className="stat-label">{label}</span>
     </div>
@@ -99,8 +108,12 @@ export default function Home() {
           <p className="hero-greeting">Hello, I&apos;m</p>
           <h1 className="hero-title gradient-text">{profile.name}</h1>
           <p className="hero-typed">
-            <span className="prompt">&gt;</span> <span>{typed}</span>
-            <span className="caret" />
+            {/* Visual-only animation; screen readers get the stable full text instead. */}
+            <span className="sr-only">{profile.typedRoles.join(', ')}</span>
+            <span aria-hidden="true">
+              <span className="prompt">&gt;</span> <span>{typed}</span>
+              <span className="caret" />
+            </span>
           </p>
           <p className="hero-description">{profile.heroDescription}</p>
           <div className="hero-buttons">
@@ -120,9 +133,9 @@ export default function Home() {
         </div>
         <div className="hero-visual">
           <CodeWindow />
-          <span className="chip chip-a">⚛️ React</span>
-          <span className="chip chip-b">🔷 TypeScript</span>
-          <span className="chip chip-c">🎨 Figma</span>
+          <span className="chip chip-a" aria-hidden="true">React</span>
+          <span className="chip chip-b" aria-hidden="true">TypeScript</span>
+          <span className="chip chip-c" aria-hidden="true">Figma</span>
         </div>
       </section>
 
@@ -138,7 +151,7 @@ export default function Home() {
         <div className="marquee-track">
           {marquee.map((s, i) => (
             <span key={`${s.name}-${i}`} className="marquee-item">
-              {s.icon} {s.name}
+              <Icon name={s.icon} size={16} /> {s.name}
             </span>
           ))}
         </div>
@@ -154,7 +167,7 @@ export default function Home() {
           {skills.slice(0, 6).map((s, i) => (
             <Reveal key={s.name} delay={i * 70}>
               <div className="skill-preview-item">
-                <span className="skill-icon">{s.icon}</span>
+                <span className="skill-icon"><Icon name={s.icon} size={26} /></span>
                 <span className="skill-name">{s.name}</span>
               </div>
             </Reveal>
@@ -170,17 +183,13 @@ export default function Home() {
         />
         <div className="projects-grid">
           {featured.map((p, i) => (
-            <ProjectCard key={p.id} project={p} index={i} onOpen={() => navigate('/portfolio')} />
+            <ProjectCard key={p.id} project={p} index={i} onOpen={(proj) => navigate('/portfolio', { state: { projectId: proj.id } })} />
           ))}
         </div>
       </section>
 
       <section className="section container">
-        <Reveal className="cta">
-          <h2>Let&apos;s build something together</h2>
-          <p>Got an idea, a project, or just want to say hi? My inbox is open.</p>
-          <a className="btn btn-primary" href={`mailto:${profile.email}`}>Get in touch</a>
-        </Reveal>
+        <ContactCta />
       </section>
     </>
   );

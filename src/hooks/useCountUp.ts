@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
+import { prefersReducedMotion } from './motion';
 
+/** Counts from 0 to `target` once `start` is true. With reduced motion the final value shows immediately. */
 export function useCountUp(target: number, start: boolean, duration = 1800) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(() => (prefersReducedMotion() ? target : 0));
 
   useEffect(() => {
     if (!start) return;
+    if (prefersReducedMotion()) {
+      setValue(target);
+      return;
+    }
     let raf = 0;
     const t0 = performance.now();
     const tick = (now: number) => {

@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { learningPath, projects } from '../data/portfolio';
 import type { Project } from '../types';
 import Reveal from '../components/Reveal';
@@ -16,7 +17,12 @@ const filters: { key: Filter; label: string }[] = [
 
 export default function Portfolio() {
   const [filter, setFilter] = useState<Filter>('all');
-  const [selected, setSelected] = useState<Project | null>(null);
+  const location = useLocation();
+  // Home's featured cards link here with the project id so its details modal opens directly.
+  const [selected, setSelected] = useState<Project | null>(() => {
+    const id = (location.state as { projectId?: number } | null)?.projectId;
+    return projects.find((p) => p.id === id) ?? null;
+  });
   const close = useCallback(() => setSelected(null), []);
 
   const visible = filter === 'all' ? projects : projects.filter((p) => p.category === filter);

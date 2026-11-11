@@ -1,13 +1,35 @@
+export type IconName =
+  | 'globe'
+  | 'palette'
+  | 'zap'
+  | 'terminal'
+  | 'coffee'
+  | 'database'
+  | 'git-branch'
+  | 'code'
+  | 'pen-tool'
+  | 'users'
+  | 'book-open'
+  | 'message'
+  | 'clock'
+  | 'rocket'
+  | 'leaf'
+  | 'car'
+  | 'sun'
+  | 'moon'
+  | 'map-pin';
+
 export type SkillCategory = 'frontend' | 'backend' | 'database' | 'tools' | 'design';
 
 export interface Skill {
   name: string;
   category: SkillCategory;
   level: number;
-  icon: string;
+  icon: IconName;
 }
 
 export type ProjectCategory = 'web' | 'design';
+export type ProjectStatus = 'Live' | 'In progress' | 'Completed';
 
 export interface Project {
   id: number;
@@ -15,10 +37,12 @@ export interface Project {
   category: ProjectCategory;
   description: string;
   technologies: string[];
-  icon: string;
+  icon: IconName;
   github: string;
   live: string;
   featured: boolean;
+  year?: string;
+  status?: ProjectStatus;
 }
 
 export interface EducationItem {
@@ -31,7 +55,7 @@ export interface EducationItem {
 export interface SoftSkill {
   title: string;
   description: string;
-  icon: string;
+  icon: IconName;
 }
 
 export interface LearningStage {

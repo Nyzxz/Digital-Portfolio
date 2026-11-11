@@ -19,6 +19,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/joseph-benedict-pacanza-678479408/',
   resume: '/resume.pdf',
   resumeFileName: 'Joseph_Benedict_Pacanza_Resume.pdf',
+  responseTime: 'within 1–2 days',
   heroDescription:
     'Passionate about building clean, functional, and user-friendly web applications. Currently exploring the world of software development one project at a time.',
   bio: [
@@ -42,26 +43,40 @@ export const categoryLabels: Record<SkillCategory, string> = {
 };
 
 export const skills: Skill[] = [
-  { name: 'HTML5', category: 'frontend', level: 85, icon: '🌐' },
-  { name: 'CSS3', category: 'frontend', level: 80, icon: '🎨' },
-  { name: 'JavaScript', category: 'frontend', level: 75, icon: '⚡' },
-  { name: 'Python', category: 'backend', level: 80, icon: '🐍' },
-  { name: 'Java', category: 'backend', level: 70, icon: '☕' },
-  { name: 'SQL', category: 'database', level: 72, icon: '🗄️' },
-  { name: 'Git & GitHub', category: 'tools', level: 78, icon: '🔀' },
-  { name: 'VS Code', category: 'tools', level: 90, icon: '💻' },
-  { name: 'Figma', category: 'design', level: 60, icon: '🖌️' },
+  { name: 'HTML5', category: 'frontend', level: 85, icon: 'globe' },
+  { name: 'CSS3', category: 'frontend', level: 80, icon: 'palette' },
+  { name: 'JavaScript', category: 'frontend', level: 75, icon: 'zap' },
+  { name: 'Python', category: 'backend', level: 80, icon: 'terminal' },
+  { name: 'Java', category: 'backend', level: 70, icon: 'coffee' },
+  { name: 'SQL', category: 'database', level: 72, icon: 'database' },
+  { name: 'Git & GitHub', category: 'tools', level: 78, icon: 'git-branch' },
+  { name: 'VS Code', category: 'tools', level: 90, icon: 'code' },
+  { name: 'Figma', category: 'design', level: 60, icon: 'pen-tool' },
 ];
 
 export const projects: Project[] = [
+  {
+    id: 2,
+    title: 'Salita',
+    category: 'web',
+    description:
+      'A full-stack learning platform for Filipino words and history, with Student and Teacher roles, a content studio for lectures and quizzes, server-scored quiz attempts, and MongoDB-backed accounts.',
+    technologies: ['React', 'TypeScript', 'Express', 'MongoDB', 'Vercel'],
+    icon: 'book-open',
+    github: '#',
+    live: 'https://salita-client.vercel.app/',
+    featured: true,
+    year: '2026',
+    status: 'Live',
+  },
   {
     id: 1,
     title: 'Personal Portfolio Website',
     category: 'web',
     description:
-      'A responsive portfolio website built with HTML, CSS, and JavaScript to showcase my projects and skills. Features smooth animations and mobile-first design.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'JSON'],
-    icon: '🚀',
+      'A responsive portfolio website that showcases my projects and skills. Started as plain HTML, CSS and JavaScript, now rebuilt with React and TypeScript with animations, theming and a command palette.',
+    technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
+    icon: 'rocket',
     github: '#',
     live: '#',
     featured: true,
@@ -73,7 +88,7 @@ export const projects: Project[] = [
     description:
       'A complete UI/UX design for a nutrition and fitness web application. Designed user flows, high-fidelity mockups, and interactive prototypes in Figma.',
     technologies: ['Figma', 'Prototyping', 'UI Design'],
-    icon: '🥗',
+    icon: 'leaf',
     github: '#',
     live: '#',
     featured: true,
@@ -85,7 +100,7 @@ export const projects: Project[] = [
     description:
       'A car rental web application UI design created in Figma. Features a clean booking interface, vehicle browsing, and user dashboard with modern aesthetics.',
     technologies: ['Figma', 'UI Design', 'Web Design'],
-    icon: '🚗',
+    icon: 'car',
     github: '#',
     live: '#',
     featured: false,
@@ -119,25 +134,25 @@ export const education: EducationItem[] = [
 export const softSkills: SoftSkill[] = [
   {
     title: 'Teamwork',
-    icon: '🤝',
+    icon: 'users',
     description:
       'Experience working in agile teams and pair programming sessions during group projects.',
   },
   {
     title: 'Self-Learning',
-    icon: '📚',
+    icon: 'book-open',
     description:
       'Quick to pick up new technologies through documentation, tutorials, and hands-on practice.',
   },
   {
     title: 'Communication',
-    icon: '💬',
+    icon: 'message',
     description:
       'Clear written and verbal communication from presenting projects and writing documentation.',
   },
   {
     title: 'Time Management',
-    icon: '⏱️',
+    icon: 'clock',
     description:
       'Balancing coursework, projects, and extracurriculars while meeting deadlines consistently.',
   },

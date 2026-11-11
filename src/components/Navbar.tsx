@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import type { Theme } from '../hooks/useTheme';
+import Icon from './Icon';
 
 interface NavbarProps {
   theme: Theme;
@@ -61,7 +62,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenPalette }: NavbarPr
             onClick={onToggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={18} />
           </button>
           <button
             className={`nav-toggle ${open ? 'open' : ''}`}

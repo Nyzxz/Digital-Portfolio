@@ -1,4 +1,4 @@
-# Nyzz — Portfolio (React + TypeScript)
+# Joseph Benedict Pacanza — Portfolio (React + TypeScript)
 
 A Vite + React 18 + TypeScript rebuild of the static HTML/CSS/JS portfolio.
 
@@ -22,8 +22,12 @@ npm run preview  # preview the production build
 
 ## Things to finish
 
-1. Replace the `'#'` values for `github` / `live` in `src/data/portfolio.ts` with real project links. The modal shows the buttons automatically once a link isn't `'#'`.
-2. Your original data had no project with `id: 2`, and the Learning Path only has Year 1 — add more entries in `portfolio.ts` when you're ready.
+1. Put your resume at `public/resume.pdf` (the Resume buttons point to `/resume.pdf`).
+2. Replace the `'#'` values for `github` / `live` in `src/data/portfolio.ts` with real project links. The modal shows the buttons automatically once a link isn't `'#'`.
+3. Add the GitHub repo link for Salita (and other projects) in `portfolio.ts`; set `year` / `status` on each project for the chips on the cards.
+4. Check `responseTime` in `portfolio.ts` (shown under the contact buttons) and change it to what's true for you.
+5. The Learning Path only has Year 1 — add more entries when you're ready.
+6. Optional: add an Open Graph preview image (`og:image`) and, once you have a custom domain, a sitemap.
 
 ## Deploying (Vercel)
 
