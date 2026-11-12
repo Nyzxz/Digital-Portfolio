@@ -44,10 +44,10 @@ function CodeWindow() {
           <span className="c-prop">name</span>: <span className="c-str">&quot;{profile.name}&quot;</span>,
         </CodeLine>
         <CodeLine n={3} indent={1}>
-          <span className="c-prop">major</span>: <span className="c-str">&quot;Information Technology&quot;</span>,
+          <span className="c-prop">major</span>: <span className="c-str">&quot;BS in Information Technology&quot;</span>,
         </CodeLine>
         <CodeLine n={4} indent={1}>
-          <span className="c-prop">year</span>: <span className="c-num">3</span>,
+          <span className="c-prop">year</span>: <span className="c-num">4</span>,
         </CodeLine>
         <CodeLine n={5} indent={1}>
           <span className="c-prop">passion</span>: <span className="c-str">&quot;Building things&quot;</span>,

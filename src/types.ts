@@ -24,7 +24,6 @@ export type SkillCategory = 'frontend' | 'backend' | 'database' | 'tools' | 'des
 export interface Skill {
   name: string;
   category: SkillCategory;
-  level: number;
   icon: IconName;
 }
 

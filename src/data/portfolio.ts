@@ -23,13 +23,13 @@ export const profile = {
   heroDescription:
     'Passionate about building clean, functional, and user-friendly web applications. Currently exploring the world of software development one project at a time.',
   bio: [
-    "I'm a third-year Information Technology student at STI College San Jose Del Monte with a passion for creating things that live on the internet. My journey into programming started in Senior High School when I was introduced to Java programming.",
+    "I'm a fourth-year Information Technology student at STI College San Jose Del Monte with a passion for creating things that live on the internet. My journey into programming started in Senior High School when I was introduced to Java programming.",
     "My goal is to become a skilled web developer who can build complete, user-friendly applications from the ground up. I'm particularly interested in web development and UI/UX design.",
   ],
   typedRoles: [
     'Aspiring Web Developer',
     'UI/UX Enthusiast',
-    'Third-year IT Student',
+    'Fourth-year IT Student',
     'Builder of Things',
   ],
 } as const;
@@ -43,15 +43,15 @@ export const categoryLabels: Record<SkillCategory, string> = {
 };
 
 export const skills: Skill[] = [
-  { name: 'HTML5', category: 'frontend', level: 85, icon: 'globe' },
-  { name: 'CSS3', category: 'frontend', level: 80, icon: 'palette' },
-  { name: 'JavaScript', category: 'frontend', level: 75, icon: 'zap' },
-  { name: 'Python', category: 'backend', level: 80, icon: 'terminal' },
-  { name: 'Java', category: 'backend', level: 70, icon: 'coffee' },
-  { name: 'SQL', category: 'database', level: 72, icon: 'database' },
-  { name: 'Git & GitHub', category: 'tools', level: 78, icon: 'git-branch' },
-  { name: 'VS Code', category: 'tools', level: 90, icon: 'code' },
-  { name: 'Figma', category: 'design', level: 60, icon: 'pen-tool' },
+  { name: 'HTML5', category: 'frontend', icon: 'globe' },
+  { name: 'CSS3', category: 'frontend', icon: 'palette' },
+  { name: 'JavaScript', category: 'frontend', icon: 'zap' },
+  { name: 'React', category: 'frontend', icon: 'code' },
+  { name: 'TypeScript', category: 'frontend', icon: 'code' },
+  { name: 'Git & GitHub', category: 'tools', icon: 'git-branch' },
+  { name: 'VS Code', category: 'tools', icon: 'code' },
+  { name: 'AI-Assisted Development', category: 'tools', icon: 'zap' },
+  { name: 'Figma', category: 'design', icon: 'pen-tool' },
 ];
 
 export const projects: Project[] = [
@@ -70,28 +70,17 @@ export const projects: Project[] = [
     status: 'Live',
   },
   {
-    id: 1,
-    title: 'Personal Portfolio Website',
-    category: 'web',
-    description:
-      'A responsive portfolio website that showcases my projects and skills. Started as plain HTML, CSS and JavaScript, now rebuilt with React and TypeScript with animations, theming and a command palette.',
-    technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
-    icon: 'rocket',
-    github: '#',
-    live: '#',
-    featured: true,
-  },
-  {
     id: 3,
     title: 'Nutrifit',
     category: 'design',
     description:
       'A complete UI/UX design for a nutrition and fitness web application. Designed user flows, high-fidelity mockups, and interactive prototypes in Figma.',
-    technologies: ['Figma', 'Prototyping', 'UI Design'],
+    technologies: ['Figma', 'Prototyping', 'UI Design', 'Web Design', 'App Design'],
     icon: 'leaf',
     github: '#',
-    live: '#',
+    live: 'https://www.figma.com/design/8lp4uIqmlInsgRDnQcqFyu/NutriFit?node-id=0-1&t=or82n9SYcqJ1S3oe-1',
     featured: true,
+    year: '2026',
   },
   {
     id: 4,
@@ -99,11 +88,12 @@ export const projects: Project[] = [
     category: 'design',
     description:
       'A car rental web application UI design created in Figma. Features a clean booking interface, vehicle browsing, and user dashboard with modern aesthetics.',
-    technologies: ['Figma', 'UI Design', 'Web Design'],
+    technologies: ['Figma', 'Prototyping', 'UI Design', 'Web Design'],
     icon: 'car',
     github: '#',
-    live: '#',
+    live: 'https://www.figma.com/design/asWHVPfce555WmkIVr5dVQ/DriveZoneRental?t=or82n9SYcqJ1S3oe-1',
     featured: false,
+    year: '2024',
   },
 ];
 
@@ -175,5 +165,5 @@ export const stats: Stat[] = [
   { label: 'Projects Completed', value: projects.length },
   { label: 'Languages Learned', value: 4 },
   { label: 'Years of Study', value: 3 },
-  { label: 'Cups of Coffee', value: 1000, suffix: '+' },
+  { label: 'Cups of Coffee', value: 0, },
 ];
