@@ -64,7 +64,7 @@ export default function ProjectCard({ project, onOpen, index = 0 }: ProjectCardP
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
             >
-              Live demo ↗
+              {project.category === 'design' ? 'View design & prototype ↗' : 'Live demo ↗'}
             </a>
           )}
           {hasGithub && (

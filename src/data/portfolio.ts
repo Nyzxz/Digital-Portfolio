@@ -71,29 +71,31 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Nutrifit',
+    title: 'NutriFit',
     category: 'design',
     description:
-      'A complete UI/UX design for a nutrition and fitness web application. Designed user flows, high-fidelity mockups, and interactive prototypes in Figma.',
+      'A complete UI/UX design for a nutrition and fitness web application, with user flows, high-fidelity mockups, and an interactive Figma prototype.',
     technologies: ['Figma', 'Prototyping', 'UI Design', 'Web Design', 'App Design'],
     icon: 'leaf',
     github: '#',
     live: 'https://www.figma.com/design/8lp4uIqmlInsgRDnQcqFyu/NutriFit?node-id=0-1&t=or82n9SYcqJ1S3oe-1',
     featured: true,
     year: '2026',
+    status: 'Live',
   },
   {
     id: 4,
     title: 'DriveZoneRental',
     category: 'design',
     description:
-      'A car rental web application UI design created in Figma. Features a clean booking interface, vehicle browsing, and user dashboard with modern aesthetics.',
+      'A car rental web application UI design created in Figma, featuring a clean booking interface, vehicle browsing, and user dashboard with an interactive prototype.',
     technologies: ['Figma', 'Prototyping', 'UI Design', 'Web Design'],
     icon: 'car',
     github: '#',
     live: 'https://www.figma.com/design/asWHVPfce555WmkIVr5dVQ/DriveZoneRental?t=or82n9SYcqJ1S3oe-1',
     featured: false,
     year: '2024',
+    status: 'Live',
   },
 ];
 

@@ -58,7 +58,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="modal-actions">
             {hasLive && (
               <a className="btn btn-primary" href={project.live} target="_blank" rel="noopener noreferrer">
-                Live Demo
+                {project.category === 'design' ? 'View Design & Prototype' : 'Live Demo'}
               </a>
             )}
             {hasGithub && (
